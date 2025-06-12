@@ -1,6 +1,6 @@
 CREATE DATABASE rh-tech IF NOT EXISTS
 
-Use rh-tech
+Use `rh-tech`;
 
 DROP TABLE IF EXISTS `funcionarios`;
 
