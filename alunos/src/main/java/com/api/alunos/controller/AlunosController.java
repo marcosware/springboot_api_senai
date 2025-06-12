@@ -1,12 +1,12 @@
-package com.api.crud.controller;
+package com.api.alunos.controller;
 
 import java.util.List;
 import org.springframework.http.ResponseEntity; 
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.api.crud.model.AlunoModel;
-import com.api.crud.service.AlunoService;
+import com.api.alunos.model.AlunoModel;
+import com.api.alunos.service.AlunoService;
 
 
 @RestController
