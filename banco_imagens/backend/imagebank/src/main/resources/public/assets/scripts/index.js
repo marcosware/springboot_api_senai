@@ -67,14 +67,10 @@
       })
   }
 
-  // GET();
-  
-  //Adicionar Linha na Tabela
   function insertLine(data){
       const table = document.getElementById('tableBody');
       data.forEach(element => {   
         const line = document.createElement('tr');
-        //Adicionando HTML
         line.innerHTML = `
           <tr>
               <td class="px-5 py-2 elementUrl"><img src="${element.url}" width="400" height="300"><br>
@@ -89,38 +85,29 @@
       });
     }
 
-    //Cadastrar Novas pessoas do formulario
     function insert(){
       event.preventDefault();
       const name = document.getElementById('input_name').value;
       const url = document.getElementById('input_url').value;
       if(name && url){
-        //Adicionando Linha com nosso Cadastro
         this.insertLine([{"name":name.trim(), "url":url.trim()}]);
-        
-        //Limpando os campos
         document.getElementById('input_name').value = "";
         document.getElementById('input_url').value = "";
-
-        //API POST  
         POST(name, url);
-    ''
-
-          Swal.fire({
-            icon: 'success',
-            title: 'Sucesso!',
-            text: 'Cadastro feito com sucesso'
-          });
-      }else{
+        Swal.fire({
+          icon: 'success',
+          title: 'Sucesso!',
+          text: 'Cadastro feito com sucesso'
+        });
+      } else {
         Swal.fire({
           icon: 'error',
           title: 'Erro!',
-          text: 'Falta dados para cadastar'
-        });
-      }
+          text: 'Falta dados para cadastrar'
+      });
     }
+  }
 
-    //Remover Alguma Linha da tabela
     function deleteLine(buttonData){
       Swal.fire({
         icon: 'question',
@@ -133,13 +120,11 @@
             const id = buttonData.parentElement.closest('td');
             buttonData.parentElement.parentElement.remove();
             DELETE(id);
-
           Swal.fire('Confirmado!', '', 'success');
         } else {
           Swal.fire('Cancelado', '', 'info');
         }
       });
-
     }
     
     function edit() {
