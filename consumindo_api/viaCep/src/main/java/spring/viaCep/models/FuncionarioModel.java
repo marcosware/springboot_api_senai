@@ -15,8 +15,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class FuncionarioModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "employee_generator")
-    @SequenceGenerator(name = "employee_generator", sequenceName = "employee_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "funcionarios_generator")
+    @SequenceGenerator(
+        name = "funcionarios_generator",
+        sequenceName = "funcionarios_seq",
+        allocationSize = 1,
+        initialValue = 1)
     private Long id;
 
     @Column(nullable = false)
